@@ -1,0 +1,7 @@
+# 忽略覆盖率文件
+.coverage
+htmlcov/
+
+# 忽略 Python 缓存
+__pycache__/
+*.pyc
