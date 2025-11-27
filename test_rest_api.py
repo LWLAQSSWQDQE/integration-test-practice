@@ -1,7 +1,7 @@
 import requests
 import pytest
 #RESTful API接口测试
-BASE_URL = "http://localhost:5000"
+BASE_URL = "http://localhost:8000"
 
 def test_get_user():
     r = requests.get(f"{BASE_URL}/users/1")
