@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
     - name: Checkout code
@@ -24,6 +25,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest coverage
+
+    - name: Start Flask service
+      run: nohup python app_service.py &
+
+    - name: Wait for service to start
+      run: sleep 3
 
     - name: Run tests with coverage
       run: |
